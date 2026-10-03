@@ -1,0 +1,33 @@
+name: CI - Validação de Build e Tipos
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Instalar o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm' # mude para 'yarn' ou 'pnpm' se usar um deles
+
+      - name: Instalar dependências
+        run: npm ci # Use 'yarn install --frozen-lockfile' ou 'pnpm install --frozen-lockfile' se aplicável
+
+      - name: Gerar rotas do TanStack Router
+        run: npm run build:routes || true 
+        # Garante que o gerador do TanStack crie o arquivo routeTree.gen.ts antes da checagem de tipos
+
+      - name: Verificar erros de TypeScript
+        run: npm run typecheck
+
+      - name: Validar o Build do projeto
+        run: npm run build
