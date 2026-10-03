@@ -1,0 +1,1 @@
+import {createFileRoute} from "@tanstack/react-router";import {ModulePage} from "../components/CommercialUI";export const Route=createFileRoute("/vendas-futuras")({component:()=> <ModulePage kind="future"/>});
