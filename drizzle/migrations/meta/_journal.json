@@ -8,6 +8,34 @@
       "when": 1791033476344,
       "tag": "0000_crm_etapa1",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791033707702,
+      "tag": "0001_crm_etapa2",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791033740266,
+      "tag": "0002_crm_etapa2_security",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1791033749143,
+      "tag": "0003_crm_etapa3",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1791033763154,
+      "tag": "0004_crm_grants_and_defaults",
+      "breakpoints": true
     }
   ]
 }

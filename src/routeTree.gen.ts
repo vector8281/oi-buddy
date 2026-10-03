@@ -1,68 +1,740 @@
 /* eslint-disable */
+
 // @ts-nocheck
-import {Route as rootRouteImport} from './routes/__root'
-import {Route as R0Import} from './routes/index'
-import {Route as R1Import} from './routes/login'
-import {Route as R2Import} from './routes/dashboard'
-import {Route as R3Import} from './routes/clientes'
-import {Route as R4Import} from './routes/clientes.novo'
-import {Route as R5Import} from './routes/clientes.$id'
-import {Route as R6Import} from './routes/funil'
-import {Route as R7Import} from './routes/agenda'
-import {Route as R8Import} from './routes/propostas'
-import {Route as R9Import} from './routes/propostas.nova'
-import {Route as R10Import} from './routes/propostas.$id'
-import {Route as R11Import} from './routes/financiamentos'
-import {Route as R12Import} from './routes/financiamentos.nova'
-import {Route as R13Import} from './routes/consorcios'
-import {Route as R14Import} from './routes/consorcios.novo'
-import {Route as R15Import} from './routes/vendas-futuras'
-import {Route as R16Import} from './routes/vendas-futuras.nova'
-import {Route as R17Import} from './routes/desistencias'
-import {Route as R18Import} from './routes/desistencias.nova'
-import {Route as R19Import} from './routes/gestao'
-import {Route as R20Import} from './routes/metas'
-import {Route as R21Import} from './routes/equipe'
-import {Route as R22Import} from './routes/equipe.$id'
-import {Route as R23Import} from './routes/desempenho'
-import {Route as R24Import} from './routes/relatorios'
-import {Route as R25Import} from './routes/usuarios'
-import {Route as R26Import} from './routes/configuracoes'
-import {Route as R27Import} from './routes/configuracoes.modelos'
-import {Route as R28Import} from './routes/auditoria'
-const R0=R0Import.update({id:'/',path:'/',getParentRoute:()=>rootRouteImport} as any)
-const R1=R1Import.update({id:'/login',path:'/login',getParentRoute:()=>rootRouteImport} as any)
-const R2=R2Import.update({id:'/dashboard',path:'/dashboard',getParentRoute:()=>rootRouteImport} as any)
-const R3=R3Import.update({id:'/clientes',path:'/clientes',getParentRoute:()=>rootRouteImport} as any)
-const R4=R4Import.update({id:'/clientes/novo',path:'/clientes/novo',getParentRoute:()=>rootRouteImport} as any)
-const R5=R5Import.update({id:'/clientes/$id',path:'/clientes/$id',getParentRoute:()=>rootRouteImport} as any)
-const R6=R6Import.update({id:'/funil',path:'/funil',getParentRoute:()=>rootRouteImport} as any)
-const R7=R7Import.update({id:'/agenda',path:'/agenda',getParentRoute:()=>rootRouteImport} as any)
-const R8=R8Import.update({id:'/propostas',path:'/propostas',getParentRoute:()=>rootRouteImport} as any)
-const R9=R9Import.update({id:'/propostas/nova',path:'/propostas/nova',getParentRoute:()=>rootRouteImport} as any)
-const R10=R10Import.update({id:'/propostas/$id',path:'/propostas/$id',getParentRoute:()=>rootRouteImport} as any)
-const R11=R11Import.update({id:'/financiamentos',path:'/financiamentos',getParentRoute:()=>rootRouteImport} as any)
-const R12=R12Import.update({id:'/financiamentos/nova',path:'/financiamentos/nova',getParentRoute:()=>rootRouteImport} as any)
-const R13=R13Import.update({id:'/consorcios',path:'/consorcios',getParentRoute:()=>rootRouteImport} as any)
-const R14=R14Import.update({id:'/consorcios/novo',path:'/consorcios/novo',getParentRoute:()=>rootRouteImport} as any)
-const R15=R15Import.update({id:'/vendas-futuras',path:'/vendas-futuras',getParentRoute:()=>rootRouteImport} as any)
-const R16=R16Import.update({id:'/vendas-futuras/nova',path:'/vendas-futuras/nova',getParentRoute:()=>rootRouteImport} as any)
-const R17=R17Import.update({id:'/desistencias',path:'/desistencias',getParentRoute:()=>rootRouteImport} as any)
-const R18=R18Import.update({id:'/desistencias/nova',path:'/desistencias/nova',getParentRoute:()=>rootRouteImport} as any)
-const R19=R19Import.update({id:'/gestao',path:'/gestao',getParentRoute:()=>rootRouteImport} as any)
-const R20=R20Import.update({id:'/metas',path:'/metas',getParentRoute:()=>rootRouteImport} as any)
-const R21=R21Import.update({id:'/equipe',path:'/equipe',getParentRoute:()=>rootRouteImport} as any)
-const R22=R22Import.update({id:'/equipe/$id',path:'/equipe/$id',getParentRoute:()=>rootRouteImport} as any)
-const R23=R23Import.update({id:'/desempenho',path:'/desempenho',getParentRoute:()=>rootRouteImport} as any)
-const R24=R24Import.update({id:'/relatorios',path:'/relatorios',getParentRoute:()=>rootRouteImport} as any)
-const R25=R25Import.update({id:'/usuarios',path:'/usuarios',getParentRoute:()=>rootRouteImport} as any)
-const R26=R26Import.update({id:'/configuracoes',path:'/configuracoes',getParentRoute:()=>rootRouteImport} as any)
-const R27=R27Import.update({id:'/configuracoes/modelos',path:'/configuracoes/modelos',getParentRoute:()=>rootRouteImport} as any)
-const R28=R28Import.update({id:'/auditoria',path:'/auditoria',getParentRoute:()=>rootRouteImport} as any)
-export interface FileRoutesByFullPath{'/':typeof R0;'/login':typeof R1;'/dashboard':typeof R2;'/clientes':typeof R3;'/clientes/novo':typeof R4;'/clientes/$id':typeof R5;'/funil':typeof R6;'/agenda':typeof R7;'/propostas':typeof R8;'/propostas/nova':typeof R9;'/propostas/$id':typeof R10;'/financiamentos':typeof R11;'/financiamentos/nova':typeof R12;'/consorcios':typeof R13;'/consorcios/novo':typeof R14;'/vendas-futuras':typeof R15;'/vendas-futuras/nova':typeof R16;'/desistencias':typeof R17;'/desistencias/nova':typeof R18;'/gestao':typeof R19;'/metas':typeof R20;'/equipe':typeof R21;'/equipe/$id':typeof R22;'/desempenho':typeof R23;'/relatorios':typeof R24;'/usuarios':typeof R25;'/configuracoes':typeof R26;'/configuracoes/modelos':typeof R27;'/auditoria':typeof R28}
-export interface FileRoutesByTo extends FileRoutesByFullPath{}
-export interface FileRoutesById{'__root__':typeof rootRouteImport;'/':typeof R0;'/login':typeof R1;'/dashboard':typeof R2;'/clientes':typeof R3;'/clientes/novo':typeof R4;'/clientes/$id':typeof R5;'/funil':typeof R6;'/agenda':typeof R7;'/propostas':typeof R8;'/propostas/nova':typeof R9;'/propostas/$id':typeof R10;'/financiamentos':typeof R11;'/financiamentos/nova':typeof R12;'/consorcios':typeof R13;'/consorcios/novo':typeof R14;'/vendas-futuras':typeof R15;'/vendas-futuras/nova':typeof R16;'/desistencias':typeof R17;'/desistencias/nova':typeof R18;'/gestao':typeof R19;'/metas':typeof R20;'/equipe':typeof R21;'/equipe/$id':typeof R22;'/desempenho':typeof R23;'/relatorios':typeof R24;'/usuarios':typeof R25;'/configuracoes':typeof R26;'/configuracoes/modelos':typeof R27;'/auditoria':typeof R28}
-export interface FileRouteTypes{fileRoutesByFullPath:FileRoutesByFullPath;fullPaths:'/'|'/login'|'/dashboard'|'/clientes'|'/clientes/novo'|'/clientes/$id'|'/funil'|'/agenda'|'/propostas'|'/propostas/nova'|'/propostas/$id'|'/financiamentos'|'/financiamentos/nova'|'/consorcios'|'/consorcios/novo'|'/vendas-futuras'|'/vendas-futuras/nova'|'/desistencias'|'/desistencias/nova'|'/gestao'|'/metas'|'/equipe'|'/equipe/$id'|'/desempenho'|'/relatorios'|'/usuarios'|'/configuracoes'|'/configuracoes/modelos'|'/auditoria';fileRoutesByTo:FileRoutesByTo;to:'/'|'/login'|'/dashboard'|'/clientes'|'/clientes/novo'|'/clientes/$id'|'/funil'|'/agenda'|'/propostas'|'/propostas/nova'|'/propostas/$id'|'/financiamentos'|'/financiamentos/nova'|'/consorcios'|'/consorcios/novo'|'/vendas-futuras'|'/vendas-futuras/nova'|'/desistencias'|'/desistencias/nova'|'/gestao'|'/metas'|'/equipe'|'/equipe/$id'|'/desempenho'|'/relatorios'|'/usuarios'|'/configuracoes'|'/configuracoes/modelos'|'/auditoria';id:'__root__'|'/'|'/login'|'/dashboard'|'/clientes'|'/clientes/novo'|'/clientes/$id'|'/funil'|'/agenda'|'/propostas'|'/propostas/nova'|'/propostas/$id'|'/financiamentos'|'/financiamentos/nova'|'/consorcios'|'/consorcios/novo'|'/vendas-futuras'|'/vendas-futuras/nova'|'/desistencias'|'/desistencias/nova'|'/gestao'|'/metas'|'/equipe'|'/equipe/$id'|'/desempenho'|'/relatorios'|'/usuarios'|'/configuracoes'|'/configuracoes/modelos'|'/auditoria';fileRoutesById:FileRoutesById}
-declare module '@tanstack/react-router'{interface FileRoutesByPath{'/':{id:'/';path:'/';fullPath:'/';preLoaderRoute:typeof R0Import;parentRoute:typeof rootRouteImport};'/login':{id:'/login';path:'/login';fullPath:'/login';preLoaderRoute:typeof R1Import;parentRoute:typeof rootRouteImport};'/dashboard':{id:'/dashboard';path:'/dashboard';fullPath:'/dashboard';preLoaderRoute:typeof R2Import;parentRoute:typeof rootRouteImport};'/clientes':{id:'/clientes';path:'/clientes';fullPath:'/clientes';preLoaderRoute:typeof R3Import;parentRoute:typeof rootRouteImport};'/clientes/novo':{id:'/clientes/novo';path:'/clientes/novo';fullPath:'/clientes/novo';preLoaderRoute:typeof R4Import;parentRoute:typeof rootRouteImport};'/clientes/$id':{id:'/clientes/$id';path:'/clientes/$id';fullPath:'/clientes/$id';preLoaderRoute:typeof R5Import;parentRoute:typeof rootRouteImport};'/funil':{id:'/funil';path:'/funil';fullPath:'/funil';preLoaderRoute:typeof R6Import;parentRoute:typeof rootRouteImport};'/agenda':{id:'/agenda';path:'/agenda';fullPath:'/agenda';preLoaderRoute:typeof R7Import;parentRoute:typeof rootRouteImport};'/propostas':{id:'/propostas';path:'/propostas';fullPath:'/propostas';preLoaderRoute:typeof R8Import;parentRoute:typeof rootRouteImport};'/propostas/nova':{id:'/propostas/nova';path:'/propostas/nova';fullPath:'/propostas/nova';preLoaderRoute:typeof R9Import;parentRoute:typeof rootRouteImport};'/propostas/$id':{id:'/propostas/$id';path:'/propostas/$id';fullPath:'/propostas/$id';preLoaderRoute:typeof R10Import;parentRoute:typeof rootRouteImport};'/financiamentos':{id:'/financiamentos';path:'/financiamentos';fullPath:'/financiamentos';preLoaderRoute:typeof R11Import;parentRoute:typeof rootRouteImport};'/financiamentos/nova':{id:'/financiamentos/nova';path:'/financiamentos/nova';fullPath:'/financiamentos/nova';preLoaderRoute:typeof R12Import;parentRoute:typeof rootRouteImport};'/consorcios':{id:'/consorcios';path:'/consorcios';fullPath:'/consorcios';preLoaderRoute:typeof R13Import;parentRoute:typeof rootRouteImport};'/consorcios/novo':{id:'/consorcios/novo';path:'/consorcios/novo';fullPath:'/consorcios/novo';preLoaderRoute:typeof R14Import;parentRoute:typeof rootRouteImport};'/vendas-futuras':{id:'/vendas-futuras';path:'/vendas-futuras';fullPath:'/vendas-futuras';preLoaderRoute:typeof R15Import;parentRoute:typeof rootRouteImport};'/vendas-futuras/nova':{id:'/vendas-futuras/nova';path:'/vendas-futuras/nova';fullPath:'/vendas-futuras/nova';preLoaderRoute:typeof R16Import;parentRoute:typeof rootRouteImport};'/desistencias':{id:'/desistencias';path:'/desistencias';fullPath:'/desistencias';preLoaderRoute:typeof R17Import;parentRoute:typeof rootRouteImport};'/desistencias/nova':{id:'/desistencias/nova';path:'/desistencias/nova';fullPath:'/desistencias/nova';preLoaderRoute:typeof R18Import;parentRoute:typeof rootRouteImport};'/gestao':{id:'/gestao';path:'/gestao';fullPath:'/gestao';preLoaderRoute:typeof R19Import;parentRoute:typeof rootRouteImport};'/metas':{id:'/metas';path:'/metas';fullPath:'/metas';preLoaderRoute:typeof R20Import;parentRoute:typeof rootRouteImport};'/equipe':{id:'/equipe';path:'/equipe';fullPath:'/equipe';preLoaderRoute:typeof R21Import;parentRoute:typeof rootRouteImport};'/equipe/$id':{id:'/equipe/$id';path:'/equipe/$id';fullPath:'/equipe/$id';preLoaderRoute:typeof R22Import;parentRoute:typeof rootRouteImport};'/desempenho':{id:'/desempenho';path:'/desempenho';fullPath:'/desempenho';preLoaderRoute:typeof R23Import;parentRoute:typeof rootRouteImport};'/relatorios':{id:'/relatorios';path:'/relatorios';fullPath:'/relatorios';preLoaderRoute:typeof R24Import;parentRoute:typeof rootRouteImport};'/usuarios':{id:'/usuarios';path:'/usuarios';fullPath:'/usuarios';preLoaderRoute:typeof R25Import;parentRoute:typeof rootRouteImport};'/configuracoes':{id:'/configuracoes';path:'/configuracoes';fullPath:'/configuracoes';preLoaderRoute:typeof R26Import;parentRoute:typeof rootRouteImport};'/configuracoes/modelos':{id:'/configuracoes/modelos';path:'/configuracoes/modelos';fullPath:'/configuracoes/modelos';preLoaderRoute:typeof R27Import;parentRoute:typeof rootRouteImport};'/auditoria':{id:'/auditoria';path:'/auditoria';fullPath:'/auditoria';preLoaderRoute:typeof R28Import;parentRoute:typeof rootRouteImport}}}
-const rootRouteChildren={IndexRoute:R0,LoginRoute:R1,DashboardRoute:R2,ClientesRoute:R3,ClientesNovoRoute:R4,ClienteIdRoute:R5,FunilRoute:R6,AgendaRoute:R7,PropostasRoute:R8,PropostasNovaRoute:R9,PropostaIdRoute:R10,FinanciamentosRoute:R11,FinanciamentosNovaRoute:R12,ConsorciosRoute:R13,ConsorciosNovoRoute:R14,VendasFuturasRoute:R15,VendasFuturasNovaRoute:R16,DesistenciasRoute:R17,DesistenciasNovaRoute:R18,GestaoRoute:R19,MetasRoute:R20,EquipeRoute:R21,EquipeIdRoute:R22,DesempenhoRoute:R23,RelatoriosRoute:R24,UsuariosRoute:R25,ConfiguracoesRoute:R26,ConfiguracoesModelosRoute:R27,AuditoriaRoute:R28}
-export const routeTree=rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>()
+
+// noinspection JSUnusedGlobalSymbols
+
+// This file was automatically generated by TanStack Router.
+// You should NOT make any changes in this file as it will be overwritten.
+// Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
+
+import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as AgendaRouteImport } from './routes/agenda'
+import { Route as AuditoriaRouteImport } from './routes/auditoria'
+import { Route as ClientesRouteImport } from './routes/clientes'
+import { Route as ConfiguracoesRouteImport } from './routes/configuracoes'
+import { Route as ConsorciosRouteImport } from './routes/consorcios'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as DesempenhoRouteImport } from './routes/desempenho'
+import { Route as DesistenciasRouteImport } from './routes/desistencias'
+import { Route as EquipeRouteImport } from './routes/equipe'
+import { Route as FinanciamentosRouteImport } from './routes/financiamentos'
+import { Route as FunilRouteImport } from './routes/funil'
+import { Route as GestaoRouteImport } from './routes/gestao'
+import { Route as LoginRouteImport } from './routes/login'
+import { Route as MetasRouteImport } from './routes/metas'
+import { Route as PropostasRouteImport } from './routes/propostas'
+import { Route as RelatoriosRouteImport } from './routes/relatorios'
+import { Route as UsuariosRouteImport } from './routes/usuarios'
+import { Route as VendasFuturasRouteImport } from './routes/vendas-futuras'
+import { Route as ClientesIdRouteImport } from './routes/clientes.$id'
+import { Route as ClientesNovoRouteImport } from './routes/clientes.novo'
+import { Route as ConfiguracoesModelosRouteImport } from './routes/configuracoes.modelos'
+import { Route as ConsorciosNovoRouteImport } from './routes/consorcios.novo'
+import { Route as DesistenciasNovaRouteImport } from './routes/desistencias.nova'
+import { Route as EquipeIdRouteImport } from './routes/equipe.$id'
+import { Route as FinanciamentosNovaRouteImport } from './routes/financiamentos.nova'
+import { Route as PropostasIdRouteImport } from './routes/propostas.$id'
+import { Route as PropostasNovaRouteImport } from './routes/propostas.nova'
+import { Route as VendasFuturasNovaRouteImport } from './routes/vendas-futuras.nova'
+
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgendaRoute = AgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuditoriaRoute = AuditoriaRouteImport.update({
+  id: '/auditoria',
+  path: '/auditoria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientesRoute = ClientesRouteImport.update({
+  id: '/clientes',
+  path: '/clientes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConfiguracoesRoute = ConfiguracoesRouteImport.update({
+  id: '/configuracoes',
+  path: '/configuracoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsorciosRoute = ConsorciosRouteImport.update({
+  id: '/consorcios',
+  path: '/consorcios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesempenhoRoute = DesempenhoRouteImport.update({
+  id: '/desempenho',
+  path: '/desempenho',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DesistenciasRoute = DesistenciasRouteImport.update({
+  id: '/desistencias',
+  path: '/desistencias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EquipeRoute = EquipeRouteImport.update({
+  id: '/equipe',
+  path: '/equipe',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanciamentosRoute = FinanciamentosRouteImport.update({
+  id: '/financiamentos',
+  path: '/financiamentos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FunilRoute = FunilRouteImport.update({
+  id: '/funil',
+  path: '/funil',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GestaoRoute = GestaoRouteImport.update({
+  id: '/gestao',
+  path: '/gestao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MetasRoute = MetasRouteImport.update({
+  id: '/metas',
+  path: '/metas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PropostasRoute = PropostasRouteImport.update({
+  id: '/propostas',
+  path: '/propostas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RelatoriosRoute = RelatoriosRouteImport.update({
+  id: '/relatorios',
+  path: '/relatorios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UsuariosRoute = UsuariosRouteImport.update({
+  id: '/usuarios',
+  path: '/usuarios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VendasFuturasRoute = VendasFuturasRouteImport.update({
+  id: '/vendas-futuras',
+  path: '/vendas-futuras',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ClientesIdRoute = ClientesIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ClientesRoute,
+} as any)
+const ClientesNovoRoute = ClientesNovoRouteImport.update({
+  id: '/novo',
+  path: '/novo',
+  getParentRoute: () => ClientesRoute,
+} as any)
+const ConfiguracoesModelosRoute = ConfiguracoesModelosRouteImport.update({
+  id: '/modelos',
+  path: '/modelos',
+  getParentRoute: () => ConfiguracoesRoute,
+} as any)
+const ConsorciosNovoRoute = ConsorciosNovoRouteImport.update({
+  id: '/novo',
+  path: '/novo',
+  getParentRoute: () => ConsorciosRoute,
+} as any)
+const DesistenciasNovaRoute = DesistenciasNovaRouteImport.update({
+  id: '/nova',
+  path: '/nova',
+  getParentRoute: () => DesistenciasRoute,
+} as any)
+const EquipeIdRoute = EquipeIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => EquipeRoute,
+} as any)
+const FinanciamentosNovaRoute = FinanciamentosNovaRouteImport.update({
+  id: '/nova',
+  path: '/nova',
+  getParentRoute: () => FinanciamentosRoute,
+} as any)
+const PropostasIdRoute = PropostasIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => PropostasRoute,
+} as any)
+const PropostasNovaRoute = PropostasNovaRouteImport.update({
+  id: '/nova',
+  path: '/nova',
+  getParentRoute: () => PropostasRoute,
+} as any)
+const VendasFuturasNovaRoute = VendasFuturasNovaRouteImport.update({
+  id: '/nova',
+  path: '/nova',
+  getParentRoute: () => VendasFuturasRoute,
+} as any)
+
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
+  '/auditoria': typeof AuditoriaRoute
+  '/clientes': typeof ClientesRouteWithChildren
+  '/configuracoes': typeof ConfiguracoesRouteWithChildren
+  '/consorcios': typeof ConsorciosRouteWithChildren
+  '/dashboard': typeof DashboardRoute
+  '/desempenho': typeof DesempenhoRoute
+  '/desistencias': typeof DesistenciasRouteWithChildren
+  '/equipe': typeof EquipeRouteWithChildren
+  '/financiamentos': typeof FinanciamentosRouteWithChildren
+  '/funil': typeof FunilRoute
+  '/gestao': typeof GestaoRoute
+  '/login': typeof LoginRoute
+  '/metas': typeof MetasRoute
+  '/propostas': typeof PropostasRouteWithChildren
+  '/relatorios': typeof RelatoriosRoute
+  '/usuarios': typeof UsuariosRoute
+  '/vendas-futuras': typeof VendasFuturasRouteWithChildren
+  '/clientes/$id': typeof ClientesIdRoute
+  '/clientes/novo': typeof ClientesNovoRoute
+  '/configuracoes/modelos': typeof ConfiguracoesModelosRoute
+  '/consorcios/novo': typeof ConsorciosNovoRoute
+  '/desistencias/nova': typeof DesistenciasNovaRoute
+  '/equipe/$id': typeof EquipeIdRoute
+  '/financiamentos/nova': typeof FinanciamentosNovaRoute
+  '/propostas/$id': typeof PropostasIdRoute
+  '/propostas/nova': typeof PropostasNovaRoute
+  '/vendas-futuras/nova': typeof VendasFuturasNovaRoute
+}
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
+  '/auditoria': typeof AuditoriaRoute
+  '/clientes': typeof ClientesRouteWithChildren
+  '/configuracoes': typeof ConfiguracoesRouteWithChildren
+  '/consorcios': typeof ConsorciosRouteWithChildren
+  '/dashboard': typeof DashboardRoute
+  '/desempenho': typeof DesempenhoRoute
+  '/desistencias': typeof DesistenciasRouteWithChildren
+  '/equipe': typeof EquipeRouteWithChildren
+  '/financiamentos': typeof FinanciamentosRouteWithChildren
+  '/funil': typeof FunilRoute
+  '/gestao': typeof GestaoRoute
+  '/login': typeof LoginRoute
+  '/metas': typeof MetasRoute
+  '/propostas': typeof PropostasRouteWithChildren
+  '/relatorios': typeof RelatoriosRoute
+  '/usuarios': typeof UsuariosRoute
+  '/vendas-futuras': typeof VendasFuturasRouteWithChildren
+  '/clientes/$id': typeof ClientesIdRoute
+  '/clientes/novo': typeof ClientesNovoRoute
+  '/configuracoes/modelos': typeof ConfiguracoesModelosRoute
+  '/consorcios/novo': typeof ConsorciosNovoRoute
+  '/desistencias/nova': typeof DesistenciasNovaRoute
+  '/equipe/$id': typeof EquipeIdRoute
+  '/financiamentos/nova': typeof FinanciamentosNovaRoute
+  '/propostas/$id': typeof PropostasIdRoute
+  '/propostas/nova': typeof PropostasNovaRoute
+  '/vendas-futuras/nova': typeof VendasFuturasNovaRoute
+}
+export interface FileRoutesById {
+  __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/agenda': typeof AgendaRoute
+  '/auditoria': typeof AuditoriaRoute
+  '/clientes': typeof ClientesRouteWithChildren
+  '/configuracoes': typeof ConfiguracoesRouteWithChildren
+  '/consorcios': typeof ConsorciosRouteWithChildren
+  '/dashboard': typeof DashboardRoute
+  '/desempenho': typeof DesempenhoRoute
+  '/desistencias': typeof DesistenciasRouteWithChildren
+  '/equipe': typeof EquipeRouteWithChildren
+  '/financiamentos': typeof FinanciamentosRouteWithChildren
+  '/funil': typeof FunilRoute
+  '/gestao': typeof GestaoRoute
+  '/login': typeof LoginRoute
+  '/metas': typeof MetasRoute
+  '/propostas': typeof PropostasRouteWithChildren
+  '/relatorios': typeof RelatoriosRoute
+  '/usuarios': typeof UsuariosRoute
+  '/vendas-futuras': typeof VendasFuturasRouteWithChildren
+  '/clientes/$id': typeof ClientesIdRoute
+  '/clientes/novo': typeof ClientesNovoRoute
+  '/configuracoes/modelos': typeof ConfiguracoesModelosRoute
+  '/consorcios/novo': typeof ConsorciosNovoRoute
+  '/desistencias/nova': typeof DesistenciasNovaRoute
+  '/equipe/$id': typeof EquipeIdRoute
+  '/financiamentos/nova': typeof FinanciamentosNovaRoute
+  '/propostas/$id': typeof PropostasIdRoute
+  '/propostas/nova': typeof PropostasNovaRoute
+  '/vendas-futuras/nova': typeof VendasFuturasNovaRoute
+}
+export interface FileRouteTypes {
+  fileRoutesByFullPath: FileRoutesByFullPath
+  fullPaths:
+    | '/'
+    | '/agenda'
+    | '/auditoria'
+    | '/clientes'
+    | '/configuracoes'
+    | '/consorcios'
+    | '/dashboard'
+    | '/desempenho'
+    | '/desistencias'
+    | '/equipe'
+    | '/financiamentos'
+    | '/funil'
+    | '/gestao'
+    | '/login'
+    | '/metas'
+    | '/propostas'
+    | '/relatorios'
+    | '/usuarios'
+    | '/vendas-futuras'
+    | '/clientes/$id'
+    | '/clientes/novo'
+    | '/configuracoes/modelos'
+    | '/consorcios/novo'
+    | '/desistencias/nova'
+    | '/equipe/$id'
+    | '/financiamentos/nova'
+    | '/propostas/$id'
+    | '/propostas/nova'
+    | '/vendas-futuras/nova'
+  fileRoutesByTo: FileRoutesByTo
+  to:
+    | '/'
+    | '/agenda'
+    | '/auditoria'
+    | '/clientes'
+    | '/configuracoes'
+    | '/consorcios'
+    | '/dashboard'
+    | '/desempenho'
+    | '/desistencias'
+    | '/equipe'
+    | '/financiamentos'
+    | '/funil'
+    | '/gestao'
+    | '/login'
+    | '/metas'
+    | '/propostas'
+    | '/relatorios'
+    | '/usuarios'
+    | '/vendas-futuras'
+    | '/clientes/$id'
+    | '/clientes/novo'
+    | '/configuracoes/modelos'
+    | '/consorcios/novo'
+    | '/desistencias/nova'
+    | '/equipe/$id'
+    | '/financiamentos/nova'
+    | '/propostas/$id'
+    | '/propostas/nova'
+    | '/vendas-futuras/nova'
+  id:
+    | '__root__'
+    | '/'
+    | '/agenda'
+    | '/auditoria'
+    | '/clientes'
+    | '/configuracoes'
+    | '/consorcios'
+    | '/dashboard'
+    | '/desempenho'
+    | '/desistencias'
+    | '/equipe'
+    | '/financiamentos'
+    | '/funil'
+    | '/gestao'
+    | '/login'
+    | '/metas'
+    | '/propostas'
+    | '/relatorios'
+    | '/usuarios'
+    | '/vendas-futuras'
+    | '/clientes/$id'
+    | '/clientes/novo'
+    | '/configuracoes/modelos'
+    | '/consorcios/novo'
+    | '/desistencias/nova'
+    | '/equipe/$id'
+    | '/financiamentos/nova'
+    | '/propostas/$id'
+    | '/propostas/nova'
+    | '/vendas-futuras/nova'
+  fileRoutesById: FileRoutesById
+}
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  AgendaRoute: typeof AgendaRoute
+  AuditoriaRoute: typeof AuditoriaRoute
+  ClientesRoute: typeof ClientesRouteWithChildren
+  ConfiguracoesRoute: typeof ConfiguracoesRouteWithChildren
+  ConsorciosRoute: typeof ConsorciosRouteWithChildren
+  DashboardRoute: typeof DashboardRoute
+  DesempenhoRoute: typeof DesempenhoRoute
+  DesistenciasRoute: typeof DesistenciasRouteWithChildren
+  EquipeRoute: typeof EquipeRouteWithChildren
+  FinanciamentosRoute: typeof FinanciamentosRouteWithChildren
+  FunilRoute: typeof FunilRoute
+  GestaoRoute: typeof GestaoRoute
+  LoginRoute: typeof LoginRoute
+  MetasRoute: typeof MetasRoute
+  PropostasRoute: typeof PropostasRouteWithChildren
+  RelatoriosRoute: typeof RelatoriosRoute
+  UsuariosRoute: typeof UsuariosRoute
+  VendasFuturasRoute: typeof VendasFuturasRouteWithChildren
+}
+
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agenda': {
+      id: '/agenda'
+      path: '/agenda'
+      fullPath: '/agenda'
+      preLoaderRoute: typeof AgendaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auditoria': {
+      id: '/auditoria'
+      path: '/auditoria'
+      fullPath: '/auditoria'
+      preLoaderRoute: typeof AuditoriaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clientes': {
+      id: '/clientes'
+      path: '/clientes'
+      fullPath: '/clientes'
+      preLoaderRoute: typeof ClientesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/configuracoes': {
+      id: '/configuracoes'
+      path: '/configuracoes'
+      fullPath: '/configuracoes'
+      preLoaderRoute: typeof ConfiguracoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consorcios': {
+      id: '/consorcios'
+      path: '/consorcios'
+      fullPath: '/consorcios'
+      preLoaderRoute: typeof ConsorciosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desempenho': {
+      id: '/desempenho'
+      path: '/desempenho'
+      fullPath: '/desempenho'
+      preLoaderRoute: typeof DesempenhoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desistencias': {
+      id: '/desistencias'
+      path: '/desistencias'
+      fullPath: '/desistencias'
+      preLoaderRoute: typeof DesistenciasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/equipe': {
+      id: '/equipe'
+      path: '/equipe'
+      fullPath: '/equipe'
+      preLoaderRoute: typeof EquipeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/financiamentos': {
+      id: '/financiamentos'
+      path: '/financiamentos'
+      fullPath: '/financiamentos'
+      preLoaderRoute: typeof FinanciamentosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/funil': {
+      id: '/funil'
+      path: '/funil'
+      fullPath: '/funil'
+      preLoaderRoute: typeof FunilRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gestao': {
+      id: '/gestao'
+      path: '/gestao'
+      fullPath: '/gestao'
+      preLoaderRoute: typeof GestaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/metas': {
+      id: '/metas'
+      path: '/metas'
+      fullPath: '/metas'
+      preLoaderRoute: typeof MetasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/propostas': {
+      id: '/propostas'
+      path: '/propostas'
+      fullPath: '/propostas'
+      preLoaderRoute: typeof PropostasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/relatorios': {
+      id: '/relatorios'
+      path: '/relatorios'
+      fullPath: '/relatorios'
+      preLoaderRoute: typeof RelatoriosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/usuarios': {
+      id: '/usuarios'
+      path: '/usuarios'
+      fullPath: '/usuarios'
+      preLoaderRoute: typeof UsuariosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vendas-futuras': {
+      id: '/vendas-futuras'
+      path: '/vendas-futuras'
+      fullPath: '/vendas-futuras'
+      preLoaderRoute: typeof VendasFuturasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/clientes/$id': {
+      id: '/clientes/$id'
+      path: '/$id'
+      fullPath: '/clientes/$id'
+      preLoaderRoute: typeof ClientesIdRouteImport
+      parentRoute: typeof ClientesRoute
+    }
+    '/clientes/novo': {
+      id: '/clientes/novo'
+      path: '/novo'
+      fullPath: '/clientes/novo'
+      preLoaderRoute: typeof ClientesNovoRouteImport
+      parentRoute: typeof ClientesRoute
+    }
+    '/configuracoes/modelos': {
+      id: '/configuracoes/modelos'
+      path: '/modelos'
+      fullPath: '/configuracoes/modelos'
+      preLoaderRoute: typeof ConfiguracoesModelosRouteImport
+      parentRoute: typeof ConfiguracoesRoute
+    }
+    '/consorcios/novo': {
+      id: '/consorcios/novo'
+      path: '/novo'
+      fullPath: '/consorcios/novo'
+      preLoaderRoute: typeof ConsorciosNovoRouteImport
+      parentRoute: typeof ConsorciosRoute
+    }
+    '/desistencias/nova': {
+      id: '/desistencias/nova'
+      path: '/nova'
+      fullPath: '/desistencias/nova'
+      preLoaderRoute: typeof DesistenciasNovaRouteImport
+      parentRoute: typeof DesistenciasRoute
+    }
+    '/equipe/$id': {
+      id: '/equipe/$id'
+      path: '/$id'
+      fullPath: '/equipe/$id'
+      preLoaderRoute: typeof EquipeIdRouteImport
+      parentRoute: typeof EquipeRoute
+    }
+    '/financiamentos/nova': {
+      id: '/financiamentos/nova'
+      path: '/nova'
+      fullPath: '/financiamentos/nova'
+      preLoaderRoute: typeof FinanciamentosNovaRouteImport
+      parentRoute: typeof FinanciamentosRoute
+    }
+    '/propostas/$id': {
+      id: '/propostas/$id'
+      path: '/$id'
+      fullPath: '/propostas/$id'
+      preLoaderRoute: typeof PropostasIdRouteImport
+      parentRoute: typeof PropostasRoute
+    }
+    '/propostas/nova': {
+      id: '/propostas/nova'
+      path: '/nova'
+      fullPath: '/propostas/nova'
+      preLoaderRoute: typeof PropostasNovaRouteImport
+      parentRoute: typeof PropostasRoute
+    }
+    '/vendas-futuras/nova': {
+      id: '/vendas-futuras/nova'
+      path: '/nova'
+      fullPath: '/vendas-futuras/nova'
+      preLoaderRoute: typeof VendasFuturasNovaRouteImport
+      parentRoute: typeof VendasFuturasRoute
+    }
+  }
+}
+
+interface ClientesRouteChildren {
+  ClientesIdRoute: typeof ClientesIdRoute
+  ClientesNovoRoute: typeof ClientesNovoRoute
+}
+
+const ClientesRouteChildren: ClientesRouteChildren = {
+  ClientesIdRoute: ClientesIdRoute,
+  ClientesNovoRoute: ClientesNovoRoute,
+}
+
+const ClientesRouteWithChildren = ClientesRoute._addFileChildren(
+  ClientesRouteChildren,
+)
+
+interface ConfiguracoesRouteChildren {
+  ConfiguracoesModelosRoute: typeof ConfiguracoesModelosRoute
+}
+
+const ConfiguracoesRouteChildren: ConfiguracoesRouteChildren = {
+  ConfiguracoesModelosRoute: ConfiguracoesModelosRoute,
+}
+
+const ConfiguracoesRouteWithChildren = ConfiguracoesRoute._addFileChildren(
+  ConfiguracoesRouteChildren,
+)
+
+interface ConsorciosRouteChildren {
+  ConsorciosNovoRoute: typeof ConsorciosNovoRoute
+}
+
+const ConsorciosRouteChildren: ConsorciosRouteChildren = {
+  ConsorciosNovoRoute: ConsorciosNovoRoute,
+}
+
+const ConsorciosRouteWithChildren = ConsorciosRoute._addFileChildren(
+  ConsorciosRouteChildren,
+)
+
+interface DesistenciasRouteChildren {
+  DesistenciasNovaRoute: typeof DesistenciasNovaRoute
+}
+
+const DesistenciasRouteChildren: DesistenciasRouteChildren = {
+  DesistenciasNovaRoute: DesistenciasNovaRoute,
+}
+
+const DesistenciasRouteWithChildren = DesistenciasRoute._addFileChildren(
+  DesistenciasRouteChildren,
+)
+
+interface EquipeRouteChildren {
+  EquipeIdRoute: typeof EquipeIdRoute
+}
+
+const EquipeRouteChildren: EquipeRouteChildren = {
+  EquipeIdRoute: EquipeIdRoute,
+}
+
+const EquipeRouteWithChildren =
+  EquipeRoute._addFileChildren(EquipeRouteChildren)
+
+interface FinanciamentosRouteChildren {
+  FinanciamentosNovaRoute: typeof FinanciamentosNovaRoute
+}
+
+const FinanciamentosRouteChildren: FinanciamentosRouteChildren = {
+  FinanciamentosNovaRoute: FinanciamentosNovaRoute,
+}
+
+const FinanciamentosRouteWithChildren = FinanciamentosRoute._addFileChildren(
+  FinanciamentosRouteChildren,
+)
+
+interface PropostasRouteChildren {
+  PropostasIdRoute: typeof PropostasIdRoute
+  PropostasNovaRoute: typeof PropostasNovaRoute
+}
+
+const PropostasRouteChildren: PropostasRouteChildren = {
+  PropostasIdRoute: PropostasIdRoute,
+  PropostasNovaRoute: PropostasNovaRoute,
+}
+
+const PropostasRouteWithChildren = PropostasRoute._addFileChildren(
+  PropostasRouteChildren,
+)
+
+interface VendasFuturasRouteChildren {
+  VendasFuturasNovaRoute: typeof VendasFuturasNovaRoute
+}
+
+const VendasFuturasRouteChildren: VendasFuturasRouteChildren = {
+  VendasFuturasNovaRoute: VendasFuturasNovaRoute,
+}
+
+const VendasFuturasRouteWithChildren = VendasFuturasRoute._addFileChildren(
+  VendasFuturasRouteChildren,
+)
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  AgendaRoute: AgendaRoute,
+  AuditoriaRoute: AuditoriaRoute,
+  ClientesRoute: ClientesRouteWithChildren,
+  ConfiguracoesRoute: ConfiguracoesRouteWithChildren,
+  ConsorciosRoute: ConsorciosRouteWithChildren,
+  DashboardRoute: DashboardRoute,
+  DesempenhoRoute: DesempenhoRoute,
+  DesistenciasRoute: DesistenciasRouteWithChildren,
+  EquipeRoute: EquipeRouteWithChildren,
+  FinanciamentosRoute: FinanciamentosRouteWithChildren,
+  FunilRoute: FunilRoute,
+  GestaoRoute: GestaoRoute,
+  LoginRoute: LoginRoute,
+  MetasRoute: MetasRoute,
+  PropostasRoute: PropostasRouteWithChildren,
+  RelatoriosRoute: RelatoriosRoute,
+  UsuariosRoute: UsuariosRoute,
+  VendasFuturasRoute: VendasFuturasRouteWithChildren,
+}
+export const routeTree = rootRouteImport
+  ._addFileChildren(rootRouteChildren)
+  ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

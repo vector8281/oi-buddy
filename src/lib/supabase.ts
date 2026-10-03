@@ -1,3 +1,8 @@
 import {createClient} from "@supabase/supabase-js";
-export const hasSupabase=Boolean(import.meta.env.VITE_SUPABASE_URL&&import.meta.env.VITE_SUPABASE_ANON_KEY);
-export const supabase=hasSupabase?createClient(import.meta.env.VITE_SUPABASE_URL,import.meta.env.VITE_SUPABASE_ANON_KEY):null;
+
+const url = import.meta.env["VITE_SUPABASE_URL"];
+// Lovable Cloud fornece a chave publishable; aceitar também o nome legado anon.
+const key = import.meta.env["VITE_SUPABASE_ANON_KEY"] ?? import.meta.env["VITE_SUPABASE_PUBLISHABLE_KEY"];
+
+export const hasSupabase = Boolean(url && key);
+export const supabase = hasSupabase ? createClient(url, key) : null;
