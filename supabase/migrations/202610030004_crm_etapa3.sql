@@ -14,6 +14,7 @@ create table if not exists public.audit_logs(
 );
 create index if not exists idx_goals_user on public.sales_goals(user_id);create index if not exists idx_goals_period on public.sales_goals(start_date,end_date);create index if not exists idx_audit_user on public.audit_logs(user_id);create index if not exists idx_audit_created on public.audit_logs(created_at);create index if not exists idx_audit_entity on public.audit_logs(entity_type,entity_id);
 alter table public.sales_goals enable row level security;alter table public.audit_logs enable row level security;
+drop policy if exists "profiles admin manage" on public.profiles;create policy "profiles admin manage" on public.profiles for all to authenticated using(public.current_role()='admin') with check(public.current_role()='admin');
 drop policy if exists "goals read" on public.sales_goals;create policy "goals read" on public.sales_goals for select to authenticated using(user_id in(select id from public.profiles where user_id=auth.uid()) or public.current_role() in('admin','manager'));
 drop policy if exists "goals manage" on public.sales_goals;create policy "goals manage" on public.sales_goals for all to authenticated using(public.current_role() in('admin','manager')) with check(public.current_role() in('admin','manager'));
 drop policy if exists "audit read" on public.audit_logs;create policy "audit read" on public.audit_logs for select to authenticated using(public.current_role() in('admin','manager'));
