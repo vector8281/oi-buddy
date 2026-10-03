@@ -1,0 +1,20 @@
+import {supabase} from "./supabase";import type {Proposal,FinancingSimulation,ConsortiumRecord,FutureSale,LostOpportunity,Document,CommercialActivity,Sale} from "../types/crm";
+const q=async(table:string)=>{if(!supabase)return [];const {data,error}=await supabase.from(table).select("*").order("created_at",{ascending:false});if(error)throw error;return data??[]};
+const local=(k:string)=>JSON.parse(localStorage.getItem(k)??"[]");
+async function save(table:string,k:string,row:any){if(supabase){const {data,error}=await supabase.from(table).upsert(row).select().single();if(error)throw error;return data}const all=local(k);const item={...row,id:row.id??crypto.randomUUID(),created_at:row.created_at??new Date().toISOString(),updated_at:new Date().toISOString()};localStorage.setItem(k,JSON.stringify([item,...all.filter((x:any)=>x.id!==item.id)]));return item}
+export const listProposals=async():Promise<Proposal[]>=>supabase?q("proposals"):local("honda-crm-proposals");
+export const saveProposal=(x:Partial<Proposal>)=>save("proposals","honda-crm-proposals",x);
+export const listFinancing=async():Promise<FinancingSimulation[]>=>supabase?q("financing_simulations"):local("honda-crm-financing");
+export const saveFinancing=(x:Partial<FinancingSimulation>)=>save("financing_simulations","honda-crm-financing",x);
+export const listConsortium=async():Promise<ConsortiumRecord[]>=>supabase?q("consortium_records"):local("honda-crm-consortium");
+export const saveConsortium=(x:Partial<ConsortiumRecord>)=>save("consortium_records","honda-crm-consortium",x);
+export const listFutureSales=async():Promise<FutureSale[]>=>supabase?q("future_sales"):local("honda-crm-future");
+export const saveFutureSale=(x:Partial<FutureSale>)=>save("future_sales","honda-crm-future",x);
+export const listLost=async():Promise<LostOpportunity[]>=>supabase?q("lost_opportunities"):local("honda-crm-lost");
+export const saveLost=(x:Partial<LostOpportunity>)=>save("lost_opportunities","honda-crm-lost",x);
+export const listDocuments=async(customer_id?:string):Promise<Document[]>=>{const a=supabase?await q("documents"):local("honda-crm-documents");return customer_id?a.filter((x:any)=>x.customer_id===customer_id):a};
+export const saveDocument=(x:Partial<Document>)=>save("documents","honda-crm-documents",x);
+export const listActivities=async():Promise<CommercialActivity[]>=>supabase?q("commercial_activities"):local("honda-crm-activities");
+export const saveActivity=(x:Partial<CommercialActivity>)=>save("commercial_activities","honda-crm-activities",x);
+export const listSales=async():Promise<Sale[]>=>supabase?q("sales"):local("honda-crm-sales");
+export const saveSale=(x:Partial<Sale>)=>save("sales","honda-crm-sales",x);
