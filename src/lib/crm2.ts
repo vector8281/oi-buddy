@@ -1,0 +1,14 @@
+import type {PipelineStage} from "./crm";
+export const PROPOSAL_STATUSES=[["draft","Rascunho"],["sent","Enviada"],["negotiating","Em negociação"],["approved","Aprovada"],["rejected","Recusada"],["expired","Expirada"],["cancelled","Cancelada"]] as const;
+export const PAYMENT_METHODS=[["cash","À vista"],["financing","Financiamento"],["consortium","Consórcio"],["financing_down","Financiamento + entrada"],["consortium_down","Consórcio + entrada"],["trade_financing","Troca + financiamento"],["other","Outra"]] as const;
+export const FINANCING_STATUSES=[["simulation","Simulação"],["sent","Enviado"],["analysis","Em análise"],["approved","Aprovado"],["rejected","Reprovado"],["contract","Contrato"],["finalized","Finalizado"],["cancelled","Cancelado"]] as const;
+export const CONSORTIUM_STATUSES=[["interest","Interesse"],["simulation","Simulação"],["proposal","Proposta"],["contracting","Contratação"],["active","Ativo"],["contemplated","Contemplado"],["cancelled","Cancelado"]] as const;
+export const FUTURE_STATUSES=[["planned","Planejada"],["waiting","Aguardando momento"],["follow_up","Em acompanhamento"],["converted","Convertida"],["cancelled","Cancelada"]] as const;
+export const LOST_REASONS=[["price","Preço"],["down_payment","Entrada insuficiente"],["financing_denied","Financiamento não aprovado"],["other_brand","Comprou outra marca"],["other_bike","Comprou outra moto"],["used","Comprou usada"],["postponed","Adiou compra"],["no_interest","Sem interesse"],["changed_plans","Mudança de planos"],["not_reached","Não localizado"],["other","Outro"]] as const;
+export const DOCUMENT_TYPES=[["personal","Documento pessoal"],["financing","Documento de financiamento"],["proposal","Documento de proposta"],["other","Outro"]] as const;
+export const DOCUMENT_STATUSES=[["pending","Pendente"],["received","Recebido"],["validated","Validado"],["rejected","Rejeitado"]] as const;
+export const labelOf=(list:readonly (readonly [string,string])[],v:string)=>list.find(x=>x[0]===v)?.[1]??v;
+export const money=(v:number|null|undefined)=>v==null?"—":v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+export const estimateInstallment=(principal:number,rate:number,months:number)=>{if(!principal||!months)return 0;if(!rate)return principal/months;const i=rate/100;return principal*i*Math.pow(1+i,months)/(Math.pow(1+i,months)-1)};
+export const estimateConsortium=(letter:number,months:number,admin:number,reserve:number)=>{if(!letter||!months)return 0;return (letter*(1+admin/100+reserve/100))/months};
+export const stageLabel=(s:string)=>({lead_new:"Leads Novos",follow_up:"Acompanhamento",closing:"Em Fechamento",won:"Fechado",financing:"Financiamento",consortium:"Consórcio",future_sale:"Venda Futura",lost:"Desistência"} as Record<string,string>)[s]??s;

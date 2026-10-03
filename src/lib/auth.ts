@@ -1,0 +1,1 @@
+export function requireAuth(){if(typeof window!=="undefined"&&!localStorage.getItem("honda-crm-auth"))return false;return true;}
