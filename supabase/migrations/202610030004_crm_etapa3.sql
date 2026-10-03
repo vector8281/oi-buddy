@@ -1,4 +1,7 @@
 -- CRM Honda Etapa 3: gestão, metas, auditoria e consultas gerenciais
+alter table public.profiles add column if not exists active boolean not null default true;
+create index if not exists idx_profiles_role on public.profiles(role);
+create index if not exists idx_profiles_active on public.profiles(active);
 create table if not exists public.sales_goals(
  id uuid primary key default gen_random_uuid(),user_id uuid references public.profiles(id) on delete cascade,
  goal_type text not null check(goal_type in ('sales_count','sales_value','leads','proposals','financing','consortium')),
