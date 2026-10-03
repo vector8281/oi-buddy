@@ -1,12 +1,12 @@
 -- CRM Honda Etapa 2
-create type if not exists public.proposal_status as enum ('draft','sent','negotiating','approved','rejected','expired','cancelled');
-create type if not exists public.payment_method as enum ('cash','financing','consortium','financing_down','consortium_down','trade_financing','other');
-create type if not exists public.financing_status as enum ('simulation','sent','analysis','approved','rejected','contract','finalized','cancelled');
-create type if not exists public.consortium_status as enum ('interest','simulation','proposal','contracting','active','contemplated','cancelled');
-create type if not exists public.future_sale_status as enum ('planned','waiting','follow_up','converted','cancelled');
-create type if not exists public.lost_reason as enum ('price','down_payment','financing_denied','other_brand','other_bike','used','postponed','no_interest','changed_plans','not_reached','other');
-create type if not exists public.document_status as enum ('pending','received','validated','rejected');
-create type if not exists public.document_type as enum ('personal','financing','proposal','other');
+do $$ begin create type public.proposal_status as enum ('draft','sent','negotiating','approved','rejected','expired','cancelled'); exception when duplicate_object then null; end $$;
+do $$ begin create type public.payment_method as enum ('cash','financing','consortium','financing_down','consortium_down','trade_financing','other'); exception when duplicate_object then null; end $$;
+do $$ begin create type public.financing_status as enum ('simulation','sent','analysis','approved','rejected','contract','finalized','cancelled'); exception when duplicate_object then null; end $$;
+do $$ begin create type public.consortium_status as enum ('interest','simulation','proposal','contracting','active','contemplated','cancelled'); exception when duplicate_object then null; end $$;
+do $$ begin create type public.future_sale_status as enum ('planned','waiting','follow_up','converted','cancelled'); exception when duplicate_object then null; end $$;
+do $$ begin create type public.lost_reason as enum ('price','down_payment','financing_denied','other_brand','other_bike','used','postponed','no_interest','changed_plans','not_reached','other'); exception when duplicate_object then null; end $$;
+do $$ begin create type public.document_status as enum ('pending','received','validated','rejected'); exception when duplicate_object then null; end $$;
+do $$ begin create type public.document_type as enum ('personal','financing','proposal','other'); exception when duplicate_object then null; end $$;
 create table if not exists public.proposals(
  id uuid primary key default gen_random_uuid(), customer_id uuid not null references public.customers(id) on delete cascade,
  seller_id uuid references public.profiles(id), motorcycle_model_id uuid references public.motorcycle_models(id),
