@@ -1,1 +1,1 @@
-import {createFileRoute,redirect} from "@tanstack/react-router";export const Route=createFileRoute("/")({beforeLoad:()=>{if(localStorage.getItem("honda-crm-auth"))throw redirect({to:"/dashboard"});throw redirect({to:"/login"})}});
+import {createFileRoute,redirect} from "@tanstack/react-router";export const Route=createFileRoute("/")({beforeLoad:()=>{if(typeof window!=="undefined"&&localStorage.getItem("honda-crm-auth"))throw redirect({to:"/dashboard"});throw redirect({to:"/login"})}});
