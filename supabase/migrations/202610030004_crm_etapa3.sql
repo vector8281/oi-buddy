@@ -33,3 +33,6 @@ begin
  insert into public.audit_logs(user_id,action,entity_type,entity_id,old_values,new_values) values(uid,lower(tg_op),tg_table_name,coalesce(new.id,old.id),oldj,newj);return coalesce(new,old);
 end $$;
 do $$ declare t text;begin foreach t in array array['customers','proposals','financing_simulations','financing_applications','consortium_records','future_sales','lost_opportunities','sales'] loop execute format('drop trigger if exists trg_audit_%s on public.%I',t,t);execute format('create trigger trg_audit_%s after insert or update or delete on public.%I for each row execute function public.audit_row_change()',t,t);end loop;end $$;
+
+-- As views gerenciais devem respeitar o RLS das tabelas subjacentes.
+alter view public.sales_summary set (security_invoker=true);alter view public.pipeline_summary set (security_invoker=true);alter view public.lead_source_summary set (security_invoker=true);alter view public.financing_summary set (security_invoker=true);alter view public.consortium_summary set (security_invoker=true);alter view public.seller_performance set (security_invoker=true);
