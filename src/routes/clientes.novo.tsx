@@ -1,1 +1,1 @@
-import {createFileRoute} from "@tanstack/react-router";import {CustomerForm} from "../components/CustomerForm";export const Route=createFileRoute("/clientes/novo")({component:CustomerForm});
+import {createFileRoute} from "@tanstack/react-router";import {CustomerForm} from "../components/CustomerForm";export const Route=createFileRoute("/clientes/novo")({beforeLoad:()=>{if(typeof window!=="undefined"&&!localStorage.getItem("honda-crm-auth"))location.href="/login"},component:CustomerForm});
