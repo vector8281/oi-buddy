@@ -14,16 +14,331 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      appointments: {
+        Row: {
+          created_at: string
+          customer_id: string
+          id: string
+          notes: string | null
+          scheduled_at: string
+          status: string
+          title: string
+          type: string
+          updated_at: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          customer_id: string
+          id?: string
+          notes?: string | null
+          scheduled_at: string
+          status?: string
+          title: string
+          type: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          customer_id?: string
+          id?: string
+          notes?: string | null
+          scheduled_at?: string
+          status?: string
+          title?: string
+          type?: string
+          updated_at?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "appointments_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "appointments_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      customer_interactions: {
+        Row: {
+          created_at: string
+          customer_id: string
+          description: string
+          id: string
+          type: string
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          customer_id: string
+          description: string
+          id?: string
+          type: string
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          customer_id?: string
+          description?: string
+          id?: string
+          type?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "customer_interactions_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "customer_interactions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      customers: {
+        Row: {
+          address: string | null
+          assigned_to: string | null
+          available_down_payment: number | null
+          birth_date: string | null
+          city: string | null
+          cpf: string | null
+          created_at: string
+          desired_installment: number | null
+          email: string | null
+          estimated_value: number | null
+          full_name: string
+          has_trade_in: boolean
+          id: string
+          last_contact_at: string | null
+          lead_source: string | null
+          motorcycle_model_id: string | null
+          next_follow_up_at: string | null
+          notes: string | null
+          phone: string | null
+          pipeline_stage: Database["public"]["Enums"]["pipeline_stage"]
+          state: string | null
+          temperature: Database["public"]["Enums"]["lead_temperature"]
+          trade_in_model: string | null
+          trade_in_value: number | null
+          updated_at: string
+          whatsapp: string | null
+        }
+        Insert: {
+          address?: string | null
+          assigned_to?: string | null
+          available_down_payment?: number | null
+          birth_date?: string | null
+          city?: string | null
+          cpf?: string | null
+          created_at?: string
+          desired_installment?: number | null
+          email?: string | null
+          estimated_value?: number | null
+          full_name: string
+          has_trade_in?: boolean
+          id?: string
+          last_contact_at?: string | null
+          lead_source?: string | null
+          motorcycle_model_id?: string | null
+          next_follow_up_at?: string | null
+          notes?: string | null
+          phone?: string | null
+          pipeline_stage?: Database["public"]["Enums"]["pipeline_stage"]
+          state?: string | null
+          temperature?: Database["public"]["Enums"]["lead_temperature"]
+          trade_in_model?: string | null
+          trade_in_value?: number | null
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Update: {
+          address?: string | null
+          assigned_to?: string | null
+          available_down_payment?: number | null
+          birth_date?: string | null
+          city?: string | null
+          cpf?: string | null
+          created_at?: string
+          desired_installment?: number | null
+          email?: string | null
+          estimated_value?: number | null
+          full_name?: string
+          has_trade_in?: boolean
+          id?: string
+          last_contact_at?: string | null
+          lead_source?: string | null
+          motorcycle_model_id?: string | null
+          next_follow_up_at?: string | null
+          notes?: string | null
+          phone?: string | null
+          pipeline_stage?: Database["public"]["Enums"]["pipeline_stage"]
+          state?: string | null
+          temperature?: Database["public"]["Enums"]["lead_temperature"]
+          trade_in_model?: string | null
+          trade_in_value?: number | null
+          updated_at?: string
+          whatsapp?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "customers_assigned_to_fkey"
+            columns: ["assigned_to"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "customers_motorcycle_model_id_fkey"
+            columns: ["motorcycle_model_id"]
+            isOneToOne: false
+            referencedRelation: "motorcycle_models"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      motorcycle_models: {
+        Row: {
+          active: boolean
+          category: string | null
+          created_at: string
+          description: string | null
+          id: string
+          name: string
+        }
+        Insert: {
+          active?: boolean
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          name: string
+        }
+        Update: {
+          active?: boolean
+          category?: string | null
+          created_at?: string
+          description?: string | null
+          id?: string
+          name?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          email: string | null
+          full_name: string
+          id: string
+          phone: string | null
+          role: Database["public"]["Enums"]["user_role"]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name: string
+          id?: string
+          phone?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          email?: string | null
+          full_name?: string
+          id?: string
+          phone?: string | null
+          role?: Database["public"]["Enums"]["user_role"]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      sales_pipeline_history: {
+        Row: {
+          created_at: string
+          customer_id: string
+          from_stage: Database["public"]["Enums"]["pipeline_stage"] | null
+          id: string
+          to_stage: Database["public"]["Enums"]["pipeline_stage"]
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          customer_id: string
+          from_stage?: Database["public"]["Enums"]["pipeline_stage"] | null
+          id?: string
+          to_stage: Database["public"]["Enums"]["pipeline_stage"]
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          customer_id?: string
+          from_stage?: Database["public"]["Enums"]["pipeline_stage"] | null
+          id?: string
+          to_stage?: Database["public"]["Enums"]["pipeline_stage"]
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sales_pipeline_history_customer_id_fkey"
+            columns: ["customer_id"]
+            isOneToOne: false
+            referencedRelation: "customers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sales_pipeline_history_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      current_role: {
+        Args: never
+        Returns: Database["public"]["Enums"]["user_role"]
+      }
     }
     Enums: {
-      [_ in never]: never
+      lead_temperature: "hot" | "warm" | "cold"
+      pipeline_stage:
+        | "lead_new"
+        | "follow_up"
+        | "closing"
+        | "won"
+        | "financing"
+        | "consortium"
+        | "future_sale"
+        | "lost"
+      user_role: "admin" | "manager" | "seller"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +465,19 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      lead_temperature: ["hot", "warm", "cold"],
+      pipeline_stage: [
+        "lead_new",
+        "follow_up",
+        "closing",
+        "won",
+        "financing",
+        "consortium",
+        "future_sale",
+        "lost",
+      ],
+      user_role: ["admin", "manager", "seller"],
+    },
   },
 } as const
