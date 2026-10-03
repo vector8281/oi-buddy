@@ -16,12 +16,12 @@ drop policy if exists "goals manage" on public.sales_goals;create policy "goals 
 drop policy if exists "audit read" on public.audit_logs;create policy "audit read" on public.audit_logs for select to authenticated using(public.current_role() in('admin','manager'));
 drop policy if exists "audit insert" on public.audit_logs;create policy "audit insert" on public.audit_logs for insert to authenticated with check(user_id is null or user_id in(select id from public.profiles where user_id=auth.uid()));
 revoke update,delete on public.audit_logs from authenticated;
-create or replace view public.sales_summary as select date_trunc('month',sale_date)::date period,seller_id,motorcycle_model_id,payment_method,count(*) sales_count,coalesce(sum(sale_value),0) sale_value from public.sales group by 1,2,3,4;
-create or replace view public.pipeline_summary as select pipeline_stage,count(*) quantity,coalesce(sum(estimated_value),0) potential_value from public.customers group by pipeline_stage;
-create or replace view public.lead_source_summary as select coalesce(lead_source,'Outro') source,count(*) leads,count(*) filter(where pipeline_stage='won') converted from public.customers group by 1;
-create or replace view public.financing_summary as select status,count(*) quantity,coalesce(sum(financed_value),0) financed_value from public.financing_simulations group by status;
-create or replace view public.consortium_summary as select status,count(*) quantity,coalesce(sum(letter_value),0) letter_value,coalesce(sum(installment_value),0) installment_value from public.consortium_records group by status;
-create or replace view public.seller_performance as
+drop view if exists public.sales_summary;create view public.sales_summary as select date_trunc('month',sale_date)::date period,seller_id,motorcycle_model_id,payment_method,count(*) sales_count,coalesce(sum(sale_value),0) sale_value from public.sales group by 1,2,3,4;
+drop view if exists public.pipeline_summary;create view public.pipeline_summary as select pipeline_stage,count(*) quantity,coalesce(sum(estimated_value),0) potential_value from public.customers group by pipeline_stage;
+drop view if exists public.lead_source_summary;create view public.lead_source_summary as select coalesce(lead_source,'Outro') source,count(*) leads,count(*) filter(where pipeline_stage='won') converted from public.customers group by 1;
+drop view if exists public.financing_summary;create view public.financing_summary as select status,count(*) quantity,coalesce(sum(financed_value),0) financed_value from public.financing_simulations group by status;
+drop view if exists public.consortium_summary;create view public.consortium_summary as select status,count(*) quantity,coalesce(sum(letter_value),0) letter_value,coalesce(sum(installment_value),0) installment_value from public.consortium_records group by status;
+drop view if exists public.seller_performance;create view public.seller_performance as
 select p.id seller_id,p.full_name,count(distinct c.id) leads,count(distinct pr.id) proposals,count(distinct s.id) sales_count,coalesce(sum(s.sale_value),0) sale_value
 from public.profiles p left join public.customers c on c.assigned_to=p.id left join public.proposals pr on pr.seller_id=p.id left join public.sales s on s.seller_id=p.id group by p.id,p.full_name;
 -- Trigger de auditoria: não depende do frontend e não cria registros em auditoria para a própria tabela.
